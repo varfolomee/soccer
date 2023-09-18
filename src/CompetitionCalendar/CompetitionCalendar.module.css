@@ -1,0 +1,9 @@
+.matches_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.matches_container > * + * {
+    margin-top: 1em;
+}

@@ -1,0 +1,93 @@
+@import './variables.css';
+
+/* Стили, используемые несколькими компонентами одновременно */
+
+.competition_title {
+    padding: 0.2em 0;
+    background-color: var(--header-back-color);
+    font-family: var(--header-font-family);
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.find_button {
+    width: 2em;
+    height: 1em;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.find_button:active {
+    background-color: orangered;
+    transform: scale(0.8);
+    transition: all 150ms;
+}
+
+@media (min-width: 48em) {
+    .find_button {
+        width: 3em;
+        height: 2em;
+    }
+}
+
+.text_input {
+    border: 1px solid lightgray;
+    outline: lightgray;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+}
+
+.selector {
+    border: 1px solid lightgray;
+    outline: lightgray;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+@media (min-width: 48em) {
+    .text_input {
+        padding: 0.5em 1.5em;
+        font-size: 1.2em;
+    }
+
+    .selector {
+        font-size: 1.2em;
+    }
+}
+
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.filters > * + * {
+    margin-top: 0.5em;
+    margin-left: 0;
+}
+
+/* Кнопку поиска в мобильной версии перемещаем к правому краю экрана */
+
+.filters img {
+    align-self: flex-end;
+}
+
+@media (min-width: 68em) {
+    .filters {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filters > * + * {
+        margin-top: 0;
+        margin-left: 0.5em;
+    }
+}

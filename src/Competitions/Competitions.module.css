@@ -1,0 +1,107 @@
+@import '../variables.css';
+
+.competition_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.competition_container > * + * {
+    margin-top: 1em;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+}
+
+.filters > * + * {
+    margin-left: 0.5em;
+}
+
+.card_container {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*
+    Правило не всегда корректно работает, поэтому было сымитировано с помощью медиазапросов (см. ниже)
+    grid-template-columns: repeat(auto-fit, minmax(15em, 2fr));
+    */
+}
+
+@media (max-width: 496px) {
+    .card_container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 497px) and (max-width: 768px) {
+    .card_container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .card_container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+.link_block {
+    margin-top: auto;
+    margin-bottom: 0.5em;
+}
+
+.link_block > a + a {
+    margin-left: 1em;
+}
+
+.link_block > a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 1.5em;
+}
+
+.link_block > a:hover {
+    color: orangered;
+}
+
+.emblem {
+    width: 100%;
+    height: 14em;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+
+.competition_title {
+    background-color: var(--header-back-color);
+    width: 100%;
+    margin-top: 0.5em;
+    box-sizing: border-box;
+}
+
+.competition_title a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: var(--header-font-family);
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.country_title {
+    color: gray;
+    margin-bottom: 1em;
+}

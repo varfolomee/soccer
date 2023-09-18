@@ -1,0 +1,17 @@
+@import '../variables.css';
+
+.show_more_block {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show_more_button {
+    padding: 1em 2em;
+    color: white;
+    background-color: var(--header-back-color);
+    cursor: pointer;
+    border: none;
+    border-radius: var(--border-radius);
+}
